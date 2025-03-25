@@ -16,8 +16,7 @@ Assessment #Demo - Use this as a reference for completing other assessments.
 🚀 How to Use This Repository
 1. Clone the repository:
 
-git clone <repo-url>
-cd AI-Internship-Assessment
+   git clone https://github.com/PearlThoughtsInternship/AI-Internship-Interview-Assessment.git
 
 2. Navigate to the respective assessment folder.
 
