@@ -1,56 +1,56 @@
-Demo Assessment
+# Demo Assessment
 
 Task: Fix a Syntax Error
 
-Description
+Description-
 
 This assessment requires fixing a syntax error in the given TypeScript code. The incorrect code is provided in the demo.ts file. Your task is to identify and correct the mistake to make the code run successfully.
 
-File Included
+File Included-
 
 demo.ts – Contains the incorrect TypeScript code with a syntax error.
 
-Expected Output
+Expected Output-
 
 After fixing the syntax error, the program should print:
 
 Hello, World
 
-Steps to Complete the Assessment
+Steps to Complete the Assessment-
 
-Clone the repository
+1.Clone the repository
 
 git clone <repo-url>
 cd assessment-repo
 
-Create a new branch for fixing the issue:
+2. Create a new branch for fixing the issue:
 
-git checkout -b fix-SyntaxError
+3. git checkout -b fix-SyntaxError
 
-Identify and fix the syntax error in demo.ts.
+4. Identify and fix the syntax error in demo.ts.
 
-Test your fix by running:
+5. Test your fix by running:
 
-ts-node demo.ts
+   ts-node demo.ts
 
-Commit and push your changes:
+6. Commit and push your changes:
 
 git add .
 git commit -m "Fixed syntax error in demo.ts"
-git push origin fix-assessment1
+git push origin fix-SyntaxError
 
-Create a Pull Request (PR):
+7. Create a Pull Request (PR):
 
-Go to your GitHub repository.
+-Go to your GitHub repository.
 
-Click on Compare & pull request.
+-Click on Compare & pull request.
 
-Add a meaningful title and description.
+-Add a meaningful title and description.
 
-Click Create pull request.
-
-Screenshots for Reference
+-Click Create pull request.
 
 
-Screencast Demonstration
+* Screencast Demonstration
+
+ https://www.loom.com/share/763a1706f2f6443c9ae38c88f94e9a0e?sid=a9440330-d2a2-4848-ada1-08c54411e8d0
 
