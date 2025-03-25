@@ -1,4 +1,5 @@
-AI Internship Assessment Repository
+# AI Internship-Interview Assessment Repository
+
 This repository contains assessments for the AI Internship. There are 4 main assessments and one demo that serves as a guide.
 
 📌 Structure of the Repository
@@ -23,8 +24,6 @@ cd AI-Internship-Assessment
 3. Read the README.md inside each assessment folder for detailed instructions.
 
 4. Complete the task, test your code, and create a Pull Request (PR).
-
-🎥 Demonstration Screencast
 
 
 
