@@ -25,7 +25,7 @@ cd assessment-repo
 
 Create a new branch for fixing the issue:
 
-git checkout -b fix-demoAssessment
+git checkout -b fix-SyntaxError
 
 Identify and fix the syntax error in demo.ts.
 
