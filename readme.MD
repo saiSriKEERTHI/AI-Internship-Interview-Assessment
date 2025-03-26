@@ -3,6 +3,7 @@
 This repository contains assessments for the AI Internship. There are 4 main assessments and one demo that serves as a guide.
 
 📌 Structure of the Repository
+
 Assessment #1 - Managing Peak Hour Patient Flow at Urban Multi-Specialty Clinic
 
 Assessment #2 - Scenario-Based Assessment
