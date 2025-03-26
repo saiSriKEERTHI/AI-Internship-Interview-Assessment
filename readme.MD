@@ -30,7 +30,7 @@ Assessment #Demo - Use this as a reference for completing other assessments.
 
 1. **Fork the repository.**
 
-2. **Solve any assessment of your choice.**
+2. **Solve any one assessment of your choice.**
 
 3. **Create a pull request (PR) in your forked repository.**
 
