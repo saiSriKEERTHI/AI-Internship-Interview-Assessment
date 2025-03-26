@@ -26,6 +26,14 @@ Assessment #Demo - Use this as a reference for completing other assessments.
 4. Complete the task, test your code, and create a Pull Request (PR).
 
 
+📤 Submission Process
 
+1. **Fork the repository.**
+
+2. **Solve any assessment of your choice.**
+
+3. **Create a pull request (PR) in your forked repository.**
+
+4. **Share the PR link along with your interview application form.**
 
 
