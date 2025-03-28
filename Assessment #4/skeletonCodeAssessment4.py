@@ -1,39 +1,82 @@
 import random
+import json
+import pyttsx3  # For text-to-speech (TTS) in IVR
+from googletrans import Translator  # AI-powered translation
 
-# Sample patient database with language and preferred communication channel
-patients = [
-    {"id": 1, "name": "Ravi Kumar", "language": "Tamil", "channel": "SMS"},
-    {"id": 2, "name": "Ananya Rao", "language": "Telugu", "channel": "WhatsApp"},
-    {"id": 3, "name": "Joseph Mathew", "language": "Malayalam", "channel": "IVR"},
-    {"id": 4, "name": "Rahul Sharma", "language": "Hindi", "channel": "SMS"},
-    {"id": 5, "name": "David Thomas", "language": "English", "channel": "WhatsApp"},
-]
-
-# Predefined multi-language messages
-messages = {
-    "Tamil": "உங்கள் நேரம் உறுதிசெய்யப்பட்டது. தயவுசெய்து வருக!",
-    "Telugu": "మీ నియామకం నిర్ధారించబడింది. దయచేసి రండి!",
-    "Malayalam": "നിങ്ങളുടെ അപോയിന്റ്മെന്റ് സ്ഥിരീകരിച്ചിരിക്കുന്നു. ദയവായി വരൂ!",
-    "Hindi": "आपका अपॉइंटमेंट कन्फर्म हो गया है। कृपया आएं!",
-    "English": "Your appointment is confirmed. Please visit!"
+# Define language mapping for AI-powered translations
+LANGUAGE_MAPPING = {
+    "Tamil": "ta",
+    "Telugu": "te",
+    "Malayalam": "ml",
+    "Hindi": "hi",
+    "English": "en"
 }
 
+def load_patient_data():
+    """Load patient data from a JSON file (Simulating a database)."""
+    try:
+        with open("patients.json", "r") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print("⚠️ patients.json not found! Creating a new file.")
+        return []
+    except json.JSONDecodeError:
+        print("⚠️ Error decoding patients.json! Please check its format.")
+        return []
+
+def save_patient_data(data):
+    """Save patient data back to the JSON file."""
+    with open("patients.json", "w") as file:
+        json.dump(data, file, indent=4)
+
+def ai_translate(message, target_language):
+    """Use AI to translate messages dynamically."""
+    translator = Translator()
+    try:
+        translated = translator.translate(message, dest=target_language)
+        return translated.text
+    except Exception as e:
+        print(f"⚠️ Translation Error: {e}. Sending message in English.")
+        return message  # Default to English in case of translation failure
+
 def send_message(patient):
-    """Simulate sending a message based on patient language and preferred channel"""
-    language = patient["language"]
-    message = messages.get(language, messages["English"])  # Default to English if language not found
-    channel = patient["channel"]
-    print(f"📩 Sending via {channel} to {patient['name']} ({language}): {message}")
+    """Send messages based on patient preferences."""
+    default_message = "Your appointment is confirmed. Please visit!"
+    target_language = LANGUAGE_MAPPING.get(patient["language"], "en")
+    
+    translated_message = ai_translate(default_message, target_language)
+    channel = patient.get("channel", "SMS")  # Default to SMS if channel is missing
 
-# Simulating message sending to all patients
-for patient in patients:
-    send_message(patient)
+    if channel == "IVR":
+        text_to_speech(translated_message, patient["language"])
+    else:
+        print(f"📩 Sending via {channel} to {patient['name']} ({patient['language']}): {translated_message}")
 
-# Effectiveness simulation: track confirmations
+def text_to_speech(message, language):
+    """Convert text to speech for IVR calls in the patient's preferred language."""
+    engine = pyttsx3.init()
+    engine.say(message)
+    engine.runAndWait()
+
 def measure_effectiveness():
-    """Simulates confirmation tracking"""
-    confirmed = sum(random.choices([0, 1], k=len(patients)))  # Random confirmations
-    confirmation_rate = (confirmed / len(patients)) * 100
-    print(f"✅ Confirmation Rate: {confirmation_rate:.2f}%")
+    """Simulate tracking confirmation rates per channel."""
+    confirmation_rates = {"SMS": 50, "WhatsApp": 70, "IVR": 40, "Email": 60, "Push": 55}
+    results = {channel: random.randint(rate - 10, rate + 10) for channel, rate in confirmation_rates.items()}
+    
+    print("\n✅ Confirmation Rates by Channel:")
+    for channel, rate in results.items():
+        print(f"   {channel}: {rate}%")
 
-measure_effectiveness()
+# ---------------------------- MAIN EXECUTION ----------------------------
+
+# Load patient data and process messages
+patients = load_patient_data()
+
+if not patients:
+    print("⚠️ No patient data found! Please add patients to patients.json.")
+else:
+    for patient in patients:
+        send_message(patient)
+
+    # Measure effectiveness of the system
+    measure_effectiveness()
