@@ -1,0 +1,7 @@
+[
+    {"name": "Ravi", "language": "Tamil", "channel": "IVR"},
+    {"name": "Priya", "language": "Telugu", "channel": "WhatsApp"},
+    {"name": "Amit", "language": "Hindi", "channel": "SMS"},
+    {"name": "Suresh", "language": "English", "channel": "Email"},
+    {"name": "Anjali", "language": "Malayalam", "channel": "Push"}
+]
