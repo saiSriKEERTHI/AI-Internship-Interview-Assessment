@@ -12,7 +12,6 @@ Context: Apollo Clinic in Chennai serves patients speaking Tamil, Telugu, Malaya
 ## 🛠️ Installation  
 Ensure you have Python installed. Then, install dependencies:  
 
-```bash
 pip install gtts json
 
 ##File Structure
