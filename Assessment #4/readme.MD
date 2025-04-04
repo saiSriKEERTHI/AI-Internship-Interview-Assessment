@@ -14,7 +14,7 @@ Ensure you have Python installed. Then, install dependencies:
 
 pip install gtts json
 
-##File Structure
+## File Structure
 skeletonCodeAssessment4.py - Original starter code.
 
 multi_language_patient_communication.py - Modified and improved version.
@@ -25,13 +25,13 @@ Joseph_Mathew_ivr_message.mp3 - AI-generated voice response.
 
 readme.md - Documentation with setup, execution, and technical details.
 
-##▶️ Execution
+## ▶️ Execution
 Run the script using:
 python multi_language_patient_communication.py
 
 This will process patient communication and generate an IVR message if applicable.
 
-##📝 Customization
+## 📝 Customization
 Add new languages by updating the messages dictionary.
 
 Modify patient preferences in patients.json.
