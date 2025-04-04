@@ -12,18 +12,18 @@ Context: Apollo Clinic in Chennai serves patients speaking Tamil, Telugu, Malaya
 ## 🛠️ Installation  
 Ensure you have Python installed. Then, install dependencies:  
 
-pip install gtts json
+bash - pip install gtts json
 
 ## File Structure
-skeletonCodeAssessment4.py - Original starter code.
+**skeletonCodeAssessment4.py** - Original starter code.
 
-multi_language_patient_communication.py - Modified and improved version.
+**multi_language_patient_communication.py** - Modified and improved version.
 
-patients.json - Stores patient data and language preferences.
+**patients.json** - Stores patient data and language preferences.
 
-Joseph_Mathew_ivr_message.mp3 - AI-generated voice response.
+**Joseph_Mathew_ivr_message.mp3** - AI-generated voice response.
 
-readme.md - Documentation with setup, execution, and technical details.
+**readme.md** - Documentation with setup, execution, and technical details.
 
 ## ▶️ Execution
 Run the script using:
