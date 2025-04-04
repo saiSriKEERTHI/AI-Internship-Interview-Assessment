@@ -4,60 +4,41 @@
 
 Context: Apollo Clinic in Chennai serves patients speaking Tamil, Telugu, Malayalam, Hindi, and English. Many patients, especially elderly ones, struggle with automated messages in non-native languages.
 
-# Problem Outline:
+## 🚀 Features  
+- **Multilingual Support**: Sends messages in English, Tamil, Telugu, Malayalam, and Hindi.  
+- **AI-Powered IVR**: Converts text into speech using Google Text-to-Speech (gTTS).  
+- **Automated Dispatch**: Determines the best communication method (SMS/WhatsApp/IVR) based on patient preferences.  
 
-* Situation: The clinic needs to implement:
-  * Appointment confirmations (24 hours prior)
-  * Wait time updates (real-time)
-  * Prescription reminders (recurring)
-* Patient Demographics:
-  * 45% Tamil speakers (25% elderly)
-  * 20% Telugu speakers
-  * 15% Malayalam speakers
-  * 10% Hindi speakers
-  * 10% English speakers
-* Current System: SMS-only in English with 35% confirmation rate
+## 🛠️ Installation  
+Ensure you have Python installed. Then, install dependencies:  
 
-# Evaluation Task:
+```bash
+pip install gtts json
 
-* Design a multi-channel communication strategy
-* Suggest how AI could improve language-specific patient communication
-* Propose a simple effectiveness measurement approach
+ File Structure
+skeletonCodeAssessment4.py - Original starter code.
 
-# Expected Solution Elements:
+multi_language_patient_communication.py - Modified and improved version.
 
-* Channel selection algorithm based on patient preferences/demographics
-* Multi-language template management
-* Simple A/B testing framework for message effectiveness
+patients.json - Stores patient data and language preferences.
 
-# Expected Solution Format:
+Joseph_Mathew_ivr_message.mp3 - AI-generated voice response.
 
-1. Multi-Channel Communication Strategy
-- Personalized Language Preferences: Store patient language preferences based on past interactions or demographics.
+readme.md - Documentation with setup, execution, and technical details.
 
-- Multi-Channel Integration:
+▶️ Execution
+Run the script using:
 
-- SMS: Default for all, but now in the patient’s preferred language.
+bash
+Copy
+Edit
+python multi_language_patient_communication.py
+This will process patient communication and generate an IVR message if applicable.
 
-- WhatsApp: For younger patients who prefer mobile apps.
+📝 Customization
+Add new languages by updating the messages dictionary.
 
-- IVR (Interactive Voice Response): For elderly patients who struggle with reading messages.
-
-- Automated Messaging System: AI-based scheduling of appointment reminders, wait-time updates,  and prescription alerts.
-
-2. AI-Enhanced Language-Specific Communication
-- Natural Language Processing (NLP): AI automatically translates messages based on stored preferences.
-
-- Voice AI for IVR: Converts text reminders into automated voice calls in Tamil, Telugu, etc.
-
-- Adaptive Message Formatting: AI personalizes messages for elderly patients (simpler language, larger font in apps).
-
-3. Effectiveness Measurement Approach
-- Confirmation Rate Tracking: Measure changes in response rates after implementing multi-language support.
-
-- A/B Testing: Test message effectiveness across different languages and formats.
-
-- Patient Satisfaction Surveys: Collect feedback on language clarity and ease of use.
+Modify patient preferences in patients.json.
 
 
 ## Instructions:
